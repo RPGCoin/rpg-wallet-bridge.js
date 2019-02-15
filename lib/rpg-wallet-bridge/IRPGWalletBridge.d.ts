@@ -170,7 +170,7 @@ export default interface IRPGWalletBridge {
      * const network = await rpgWalletBridge.getNetwork()
      * console.log(network)
      * > {
-     *     magicBytes: "e3e1f3e8",
+     *     magicBytes: "3b7ca3c7",
      *     name: "Mainnet"
      *   }
      * @returns The network object.
