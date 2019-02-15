@@ -1,6 +1,6 @@
 {
   "name": "rpg-wallet-bridge.js",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "lib/rpg-wallet-bridge/index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "url": "git+https://github.com/RPGCoin/rpg-wallet-bridge.js.git"
   },
   "keywords": [],
-  "author": "silence48",
+  "author": "Silence <silence@rpgcoin.gg>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/RPGCoin/rpg-wallet-bridge.js/issues"
