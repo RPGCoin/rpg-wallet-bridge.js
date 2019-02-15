@@ -1,0 +1,30 @@
+import IRPGWalletBridge from "./IRPGWalletBridge";
+import Network from "./entities/Network";
+import IWalletProvider from "rpg-wallet-bridge-provider-interface/lib/IWalletProvider";
+import ChangeType from "rpg-wallet-bridge-provider-interface/lib/entities/ChangeType";
+import Utxo from "rpg-wallet-bridge-provider-interface/lib/entities/Utxo";
+import Output from "rpg-wallet-bridge-provider-interface/lib/entities/Output";
+export default class RPGWalletBridge implements IRPGWalletBridge {
+    walletProvider?: IWalletProvider | undefined;
+    private defaultDAppId?;
+    constructor(walletProvider?: IWalletProvider | undefined);
+    // getAssetAddress(changeType: ChangeType, index?: number, asset: string): Promise<string>;
+    // getAssetAddressIndex(changeType: ChangeType, asset: string): Promise<number>;
+    // getAssetAddresses(changeType: ChangeType, startIndex?: number, size?: number, asset: string): Promise<string[]>;
+    getRedeemScript(p2shAddress: string, txid: string): Promise<string | undefined>;
+    getRedeemScripts(txid: string): Promise<string[]>;
+    addRedeemScript(redeemScript: string, txid: string): Promise<void>;
+    getUtxos(address: string): Promise<Utxo[]>;
+    getBalance(address: string): Promise<number>;
+    sign(address: string, dataToSign: string): Promise<string>;
+    buildTransaction(outputs: Output[], dAppId?: string): Promise<string>;
+    getProtocolVersion(): Promise<number>;
+    getNetwork(): Promise<Network>;
+    getFeePerByte(): Promise<number>;
+    private isTxHash;
+    private checkWalletProvider;
+    private isP2SHLegacyAddress;
+    private isLegacyAddress;
+    private toAddressFromScript;
+    private createSignedTx;
+}
